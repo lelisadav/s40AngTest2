@@ -1,0 +1,27 @@
+<img ng-src="{{project._source.imageUrl}}" class="project">
+
+<h1>{{project._source.name}}</h1>
+
+<p>{{project._id}}</p>
+
+
+
+<ul class="specs">
+  <li>
+    <span>Name</span>
+     {{project._source.name}}
+     
+    
+  </li>
+	<span> Group IDs </span>
+	<dd ng-repeat="group in project._source.groupIDs">
+	{{group.groupID}}
+	</dd>
+	
+  
+  
+  <li>
+  <span>Hidden?</span>
+  <dd>{{project._source | checkmark}}</dd>
+  </li>
+</ul>

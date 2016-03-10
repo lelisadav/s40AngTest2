@@ -6,37 +6,15 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
 
   
 </head>
-<body ng-controller="ProjectListCtrl">
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
-      <!--Sidebar content-->
+<body ng-view>
 
-      Search: <input ng-model="query">
-	  Sort by:
-<select ng-model="orderProp">
-  <option value="name">Alphabetical</option>
-  <option value="dateModified">Newest</option>
-</select>
-
-    </div>
-    <div class="col-md-10">
-      <!--Body content-->
-
-      <ul class='projects'>
-<li ng-repeat="proj in projects | filter:query | orderBy:orderProp">
-<span>{{proj._source.name}}</span>
-<p>{{proj._id}}</p>
-</li>
-</ul>
-
-    </div>
-  </div>
-</div>
 
 
   
