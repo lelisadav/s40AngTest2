@@ -1,1 +1,19 @@
-TBD: detail view for <span>{{projectId}}</span>
+<img ng-src="{{project._source.imageUrl}}" class="project">
+
+<h1>{{project._source.name}}</h1>
+
+
+<ul class="details">
+  <li>
+    <span>Group IDs</span>
+    <dl>
+      <dt>Associated Groups</dt>
+      <dd ng-repeat="group in project._source.groupIDs">{{group.groupID}}</dd>
+    </dl>
+  </li>
+   
+  <li>
+    <span>Time Modified</span>
+    <dd>{{project._source.timeModified}}</dd>
+  </li>
+</ul>

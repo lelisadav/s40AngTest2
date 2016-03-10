@@ -9,7 +9,11 @@ phonecatControllers.controller('ProjectListCtrl', ['$scope', '$http',
     $scope.orderProp = '_source.timeModified';
   }]);
 
-phonecatControllers.controller('ProjectDetailCtrl', ['$scope', '$routeParams',
-  function($scope, $routeParams) {
-    $scope.projectId = $routeParams.projectId;
+phonecatControllers.controller('ProjectDetailCtrl', ['$scope', '$routeParams', '$http',
+  function($scope, $routeParams, $http) {
+  $http.get('projects/'+$routeParams.projectId+'.json').success(function(data){
+	$scope.project=data;
+  
+  });
+   
   }]);
