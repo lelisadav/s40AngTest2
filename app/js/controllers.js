@@ -1,21 +1,15 @@
-'use strict';
+var phonecatControllers = angular.module('phonecatControllers', []);
 
-/* Controllers */
+phonecatControllers.controller('ProjectListCtrl', ['$scope', '$http',
+  function($scope, $http) {
+    $http.get('projects/projects2.json').success(function(data) {
+      $scope.projects = data.hits.hits;
+    });
 
-var phonecatApp= angular.module('phonecatApp', []);
+    $scope.orderProp = '_source.timeModified';
+  }]);
 
-phonecatApp.controller('ProjectListCtrl', function($scope, $http){
-	$http.get('projects2.json').success(function(data){
-		$scope.projects = data.hits.hits;
-	
-	});
-	$scope.orderProp='timeModified';
-	});
-	
-	
-	
-	
-
-
-
-
+phonecatControllers.controller('ProjectDetailCtrl', ['$scope', '$routeParams',
+  function($scope, $routeParams) {
+    $scope.projectId = $routeParams.projectId;
+  }]);
