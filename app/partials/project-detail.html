@@ -16,4 +16,8 @@
     <span>Time Modified</span>
     <dd>{{project._source.timeModified}}</dd>
   </li>
+  <li>
+  <span>Hidden?</span>
+  <dd>{{project._source | checkmark}}</dd>
+  </li>
 </ul>
