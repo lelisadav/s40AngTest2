@@ -18,8 +18,20 @@ phonecatApp.config(['$routeProvider',
 		}).when('/projects/:projectId', {
 			templateUrl: 'partials/project-detail.html',
 			controller: 'ProjectDetailCtrl'
-		}).otherwise({
-			redirectTo: '/projects'
+		}).when('/home', {
+			templateUrl: 'partials/login.html',
+			controller: 'LoginCtrl'
+		}).when('/groups',
+		{
+			templateUrl: 'partials/group-list.html',
+			controller: 'GroupListCtrl'
+		})
+		
+		
+		
+		
+		.otherwise({
+			redirectTo: '/home'
 		});
 		}]);
 		

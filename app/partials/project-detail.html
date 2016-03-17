@@ -13,8 +13,8 @@
      
     
   </li>
-	<span> Group IDs </span>
-	<dd ng-repeat="group in project._source.groupIDs">
+	<a ng-href="#/groups" ng-click=>Group IDs</a>
+	<dd ng-repeat="group in project._source.groupIDs"><a href="#/projects/{{proj._id}}">{{proj._source.name}}</a>
 	{{group.groupID}}
 	</dd>
 	
@@ -24,4 +24,6 @@
   <span>Hidden?</span>
   <dd>{{project._source | checkmark}}</dd>
   </li>
+  
+  
 </ul>
