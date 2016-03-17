@@ -2,20 +2,24 @@
 
 <h1>{{project._source.name}}</h1>
 
+<p>{{project._id}}</p>
 
-<ul class="details">
+
+
+<ul class="specs">
   <li>
-    <span>Group IDs</span>
-    <dl>
-      <dt>Associated Groups</dt>
-      <dd ng-repeat="group in project._source.groupIDs">{{group.groupID}}</dd>
-    </dl>
+    <span>Name</span>
+     {{project._source.name}}
+     
+    
   </li>
-   
-  <li>
-    <span>Time Modified</span>
-    <dd>{{project._source.timeModified}}</dd>
-  </li>
+	<span> Group IDs </span>
+	<dd ng-repeat="group in project._source.groupIDs">
+	{{group.groupID}}
+	</dd>
+	
+  
+  
   <li>
   <span>Hidden?</span>
   <dd>{{project._source | checkmark}}</dd>
